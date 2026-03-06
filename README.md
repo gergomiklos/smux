@@ -20,6 +20,8 @@ Requires macOS 14 or later. Free and open source.
 
 [Download the latest release](https://github.com/gergomiklos/smux/releases)
 
+<img width="1374" height="1019" alt="Screenshot 2026-03-06 at 12 15 49" src="https://github.com/user-attachments/assets/ab2322c8-1d00-4e45-95f9-bf7b64a34109" />
+
 ## Keyboard Shortcuts
 
 | Action | Shortcut |
