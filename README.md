@@ -1,99 +1,43 @@
 # smux
 
-A lightweight macOS terminal workspace app built with SwiftUI + AppKit.
+Your terminals, organized. A native terminal multiplexer for macOS.
 
-`smux` gives you:
-- Multiple workspaces
-- Split terminal panes (horizontal/vertical)
-- Focus navigation between panes
-- Per-pane activity and attention indicators
-- Optional completion notifications for background work
-- Layout/state restore on relaunch
+Run AI agents in parallel across split terminals and get notified when they finish.
 
-## Current Tech Stack
+## Features
 
-- Language: Swift 5.9+
-- Platform: macOS 14+
-- UI: SwiftUI + AppKit
-- Terminal engine: [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm)
-- Build system: Xcode project (`smux.xcodeproj`)
+- **Split terminals, run agents in parallel** — Split horizontally or vertically and manage everything at once.
+- **Get notified when agents need you** — Turn on watch mode for any terminal. When an agent finishes its task, you get notified.
+- **Workspaces** — Group related terminals into workspaces and switch between them.
+- **Keyboard-driven** — Split, navigate, zoom, close, switch — everything is one shortcut away.
+- **Session persistence** — Layout, terminals, and scrollback are saved and restored automatically.
+- **Native and fast** — Written in Swift for macOS.
 
-## What Is Implemented
+## Install
 
-- Workspace management (create/select/delete)
-- Recursive split tree layout with draggable split dividers
-- Pane focus tracking and directional navigation
-- Terminal pane actions:
-  - Split right / split down
-  - Close focused pane
-  - Zoom focused pane
-  - Toggle notification watch mode (`Off -> On -> Silent`)
-- Activity detection from terminal output:
-  - `active`, `idle`, `exited`
-  - attention highlight when watched commands finish out of focus
-- Sidebar badges for active/attention counts
-- State persistence on quit + restore on launch
+Requires macOS 14 or later. Free and open source.
+
+[Download the latest release](https://github.com/gergomiklos/smux/releases)
 
 ## Keyboard Shortcuts
 
-### Terminal
+| Action | Shortcut |
+|---|---|
+| Split right | `Cmd + Right` |
+| Split down | `Cmd + Down` |
+| Close terminal | `Cmd + W` |
+| Zoom terminal | `Cmd + Shift + Enter` |
+| Toggle notifications | `Cmd + B` |
+| Navigate panes | `Option + Arrow keys` |
+| Switch workspace | `Cmd + 1-9` |
+| Next / previous workspace | `Option + Shift + Arrow keys` |
+| New workspace | `Cmd + Shift + T` |
+| Show all shortcuts | `Cmd + /` |
 
-- `Cmd+W`: Close terminal pane
-- `Cmd+Right`: Split right
-- `Cmd+Down`: Split down
-- `Cmd+Shift+Enter`: Zoom terminal
-- `Cmd+B`: Toggle notifications (`Off / On / Silent`)
-- `Option+Left/Right/Up/Down`: Jump between panes
+## Build from source
 
-### Workspace
+Open `smux.xcodeproj` in Xcode 15+ and hit `Cmd + R`.
 
-- `Cmd+1..9`: Jump to workspace
-- `Option+Shift+Right` or `Option+Shift+Down`: Next workspace
-- `Option+Shift+Left` or `Option+Shift+Up`: Previous workspace
-- `Cmd+Shift+T`: New workspace
+## License
 
-### Help
-
-- `Cmd+/`: Open keyboard shortcuts window
-
-## Project Structure
-
-```text
-Sources/
-  App/        # App entrypoint, app delegate, menu commands
-  Models/     # Workspace, split tree, panel/activity/watch models
-  Services/   # Activity detection, persistence, workspace manager
-  Views/      # Sidebar, workspace layout, pane and terminal views
-Resources/
-  Assets.xcassets
-smux.xcodeproj/
-```
-
-## Build And Run
-
-1. Open `smux.xcodeproj` in Xcode 15+.
-2. Select the `smux` scheme.
-3. Build and run (`Cmd+R`).
-
-### Command-line build
-
-```bash
-xcodebuild -project smux.xcodeproj -scheme smux -destination 'generic/platform=macOS' build
-```
-
-## Notifications
-
-`smux` can notify you when a watched command finishes while you are not looking at that pane.
-
-- `Off`: no attention behavior
-- `On`: attention + sound + system notification (when app is backgrounded)
-- `Silent`: attention + system notification (no sound)
-
-Detailed behavior is documented in [`docs/notification-logic.md`](docs/notification-logic.md).
-
-## Known Gaps / Next Steps
-
-- Workspace rename UI is not implemented yet (context menu entry is placeholder).
-- Persistence currently restores layout and panel identities, but not full per-panel session metadata.
-- No CLI/socket automation API yet.
-- No in-app browser integration.
+MIT
