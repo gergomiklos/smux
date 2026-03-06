@@ -1,16 +1,17 @@
 # smux
 
-Your terminals, organized. A native terminal multiplexer for macOS.
+A native terminal multiplexer for macOS built for AI agents.
 
-Run AI agents in parallel across split terminals and get notified when they finish.
+Run agents in parallel across split terminals and get notified when they finish.
+
 
 ## Features
 
 - **Split terminals, run agents in parallel** — Split horizontally or vertically and manage everything at once.
-- **Get notified when agents need you** — Turn on watch mode for any terminal. When an agent finishes its task, you get notified.
+- **Get notified when agents need you** — Turn on watch mode for any terminal. When an agent finishes its task, you get notified (with ring, sound or native push).
 - **Workspaces** — Group related terminals into workspaces and switch between them.
 - **Keyboard-driven** — Split, navigate, zoom, close, switch — everything is one shortcut away.
-- **Session persistence** — Layout, terminals, and scrollback are saved and restored automatically.
+- **Session persistence** — Layout, terminals, and everything are saved and restored automatically.
 - **Native and fast** — Written in Swift for macOS.
 
 ## Install
