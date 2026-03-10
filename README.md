@@ -1,6 +1,6 @@
 # smux
 
-A native terminal multiplexer for macOS built for AI agents.
+An AI-native terminal multiplexer for macOS built.
 
 Run agents in parallel across split terminals and get notified when they finish.
 
